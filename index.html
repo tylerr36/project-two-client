@@ -12,6 +12,30 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Paddleboat</h1>
+
+      <header>
+        <div id="message"></div>
+        <form id='sign-up'>
+          <legend>Sign up!</legend>
+          <input type='email' name='credentials[email]' placeholder='email' />
+          <input type="password" name='credentials[password]' placeholder='password' />
+          <input type="password" name='credentials[password_confirmation]' placeholder='password confirmation'/>
+          <button>Sign up!</button>
+        </form>
+
+        <form id='sign-in'>
+          <legend>Sign in!</legend>
+          <input type='email' name='credentials[email]' placeholder='email' />
+          <input type="password" name='credentials[password]' placeholder='password' />
+          <button>Sign in!</button>
+        </form>
+
+        <form id='change-password'>
+        </form>
+        <button id='log-out'>
+          Log Out
+        </button>
+      </header>
     </body>
 </html>
