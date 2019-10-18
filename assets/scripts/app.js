@@ -12,4 +12,9 @@ $(() => {
   $('#sign-in').on('submit', events.onSignIn)
   $('#change-password').on('submit', events.onChangePassword)
   $('#sign-out').on('submit', events.onSignOut)
+  $('.border').on('click', events.onClick)
+  $('.start-game').on('click', events.onCreateGame)
+
+  // when start game button is clicked, run a function to gameEvents.playGame
+  // remove the hide class from the #main element (board)
 })

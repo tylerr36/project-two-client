@@ -11,31 +11,61 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
-      <h1>Paddleboat</h1>
-
-      <header>
-        <div id="message"></div>
-        <form id='sign-up'>
-          <legend>Sign up!</legend>
-          <input type='email' name='credentials[email]' placeholder='email' />
-          <input type="password" name='credentials[password]' placeholder='password' />
-          <input type="password" name='credentials[password_confirmation]' placeholder='password confirmation'/>
-          <button>Sign up!</button>
+      <h1>Paddleboat 3000!</h1>
+      <div id="message"></div>
+      <div class="before-sign-in">
+        <form id="sign-up">
+          <h2 class='signup'>Sign up</h2>
+          <input type="email" name="credentials[email]" placeholder='Enter email'>
+          <input type="password" name="credentials[password]" placeholder='Enter password'>
+          <input type="password" name="credentials[password_confirmation]" placeholder='Enter password again'>
+          <button type="submit">Sign up</button>
         </form>
 
-        <form id='sign-in'>
-          <legend>Sign in!</legend>
-          <input type='email' name='credentials[email]' placeholder='email' />
-          <input type="password" name='credentials[password]' placeholder='password' />
-          <button>Sign in!</button>
+        <form id="sign-in">
+          <h2 class='signin'>Sign in</h2>
+          <!-- //copy "sign-up" info here -->
+          <input type="email" name="credentials[email]" placeholder='Enter email'>
+          <input type="password" name="credentials[password]" placeholder='Enter password'>
+          <button type="submit">Sign in</button>
+        </form>
+      </div>
+
+      <div class="after-sign-in hide">
+        <form id="change-password">
+          <h2 class='changepassword'>Change Password</h2>
+          <input type="password" name="passwords[old]" placeholder='Enter old password'>
+          <input type="password" name="passwords[new]" placeholder='Enter new password'>
+          <button>Change Password</button>
         </form>
 
-        <form id='change-password'>
+
+        <form id="sign-out">
+          <button id="signout">Sign Out</button>
         </form>
-        <button id='log-out'>
-          Log Out
-        </button>
-      </header>
+
+        <div class="game-buttons">
+          <button class="start-game" type="button">Start New Game!</button>
+          <button class="end-game">End Game</button>
+        </div>
+
+        <form id="country">
+            <h4 class='country'>Make your selections!</h4>
+            <input type="text" name="country" placeholder='Enter country'>
+            <input type="text" name="city" placeholder='Enter city'>
+            <input type="number" min="0" name="price" placeholder='Max. price'>
+            <input type="number" min="0" name="ski" placeholder='Ocean distance'>
+            <input type="number" min="0" name="ocean" placeholder='Ski distance'>
+            <input type="number" min="0" name="airport" placeholder='Airport distance'>
+            <button>Save my selections!</button>
+        </form>
+
+
+      </div>
+
+
     </body>
-</html>
+
+    </html>
