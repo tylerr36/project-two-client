@@ -59,14 +59,15 @@ const signOut = function () {
   })
 }
 
-const createGame = function (formData) {
+const enterSelections = function (formData) {
+  console.log(formData)
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + '/apartments',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {}
+    data: formData
   })
 }
 
@@ -75,5 +76,5 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  createGame
+  enterSelections
 }

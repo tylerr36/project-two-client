@@ -42,12 +42,13 @@ const onSignOut = function (event) {
     .catch(ui.onSignOutFailure)
 }
 
-const onCreateGame = function (event) {
+const onEnterSelections = function (event) {
   event.preventDefault()
-
-  api.createGame()
-    .then(ui.onCreateGameSuccess)
-    .catch(ui.onCreateGameFailure)
+  const form = event.target
+  const formData = getFormFields(form)
+  api.enterSelections(formData)
+    .then(ui.onEnterSelectionSuccess)
+    .catch(ui.onEnterSelectionFailure)
 }
 
 module.exports = {
@@ -55,6 +56,6 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onCreateGame
+  onEnterSelections
   // onClick
 }
