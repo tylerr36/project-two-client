@@ -31,7 +31,7 @@ const signIn = function (formData) {
 // addPOST
 // Listen for click on "New game" button and run event handler to call API
 
-const changePassword = function(formData) {
+const changePassword = function (formData) {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/change-password',
@@ -42,14 +42,14 @@ const changePassword = function(formData) {
   })
 }
 
-const signOut = function() {
+const signOut = function () {
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/sign-out',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    success: function() {
+    success: function () {
       $('.cell').hide()
       $('#createGame').hide()
       $('#change-password').hide()
@@ -63,7 +63,7 @@ const signOut = function() {
   })
 }
 
-const enterSelections = function(formData) {
+const enterSelections = function (formData) {
   console.log(formData)
   return $.ajax({
     method: 'POST',
@@ -75,7 +75,7 @@ const enterSelections = function(formData) {
   })
 }
 
-const viewSelections = function() {
+const viewSelections = function () {
   return $.ajax({
     method: 'GET',
     // if error, take out slash at end of next line

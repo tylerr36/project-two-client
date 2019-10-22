@@ -59,7 +59,7 @@ const onEnterSelectionsSuccess = function (responseData) {
   // add .hide somewhere in here using jQuery
   //  save the 'user' we got from the API inside of 'store' so we
   //  can use it later from any file
-  store.user = responseData.user
+  // store.user = responseData.user
 }
 
 const onViewSelectionsSuccess = function (responseData) {
