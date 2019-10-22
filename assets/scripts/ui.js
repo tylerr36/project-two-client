@@ -130,20 +130,20 @@ const onDeleteOneSelectionSuccess = function (data) {
   $('#apartment-message').html('')
   $('#apartment-delete').html('')
   // data.apartment.id apartment
-  console.log('this is from ui ' + data.apartment.id)
-  const apartmentHTML = (`
- <p>ID: ${data.apartment.id}</p>
- <p>Country: ${data.apartment.country}</p>
-<p>City: ${data.apartment.city}</p>
-<p>Price: ${data.apartment.price}</p>
-<p>Ski Distance: ${data.apartment.ski_distance}</p>
- <p>Ocean Distance: ${data.apartment.ocean_distance}</p>
- <p>Airport Distance: ${data.apartment.airport_distance}</p>
-  <br>
- `)
-  $('#apartment-delete').append(apartmentHTML)
+//  console.log('this is from ui ' + data.apartment.id)
+//   const apartmentHTML = (`
+//  <p>ID: ${data.apartment.id}</p>
+//  <p>Country: ${data.apartment.country}</p>
+// <p>City: ${data.apartment.city}</p>
+// <p>Price: ${data.apartment.price}</p>
+// <p>Ski Distance: ${data.apartment.ski_distance}</p>
+//  <p>Ocean Distance: ${data.apartment.ocean_distance}</p>
+//  <p>Airport Distance: ${data.apartment.airport_distance}</p>
+//   <br>
+//  `)
+//  $('#apartment-delete').append(apartmentHTML)
 
-  $('#apartment-delete').show()
+//  $('#apartment-delete').show()
 }
 
 const onUpdateSelectionsSuccess = function (responseData) {
