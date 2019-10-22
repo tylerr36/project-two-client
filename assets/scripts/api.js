@@ -3,7 +3,7 @@ const store = require('./store')
 
 // AJAX call to signUp endpoint on server
 
-const signUp = function (formData) {
+const signUp = function(formData) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-up',
@@ -15,7 +15,11 @@ const signIn = function (formData) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-in',
-    data: formData
+    data: formData,
+    success: function () {
+      $('#change-password').show()
+      $('.changepassword').show()
+    }
   })
 }
 
@@ -27,7 +31,7 @@ const signIn = function (formData) {
 // addPOST
 // Listen for click on "New game" button and run event handler to call API
 
-const changePassword = function (formData) {
+const changePassword = function(formData) {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/change-password',
@@ -38,14 +42,14 @@ const changePassword = function (formData) {
   })
 }
 
-const signOut = function () {
+const signOut = function() {
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/sign-out',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    success: function () {
+    success: function() {
       $('.cell').hide()
       $('#createGame').hide()
       $('#change-password').hide()
@@ -59,7 +63,7 @@ const signOut = function () {
   })
 }
 
-const enterSelections = function (formData) {
+const enterSelections = function(formData) {
   console.log(formData)
   return $.ajax({
     method: 'POST',
@@ -71,10 +75,22 @@ const enterSelections = function (formData) {
   })
 }
 
+const viewSelections = function() {
+  return $.ajax({
+    method: 'GET',
+    // if error, take out slash at end of next line
+    url: config.apiUrl + '/apartments',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  enterSelections
+  enterSelections,
+  viewSelections
 }

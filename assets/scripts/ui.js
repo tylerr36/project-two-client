@@ -19,13 +19,13 @@ const failureMessage = function (newText) {
 
 const onSignUpSuccess = function (data) {
   console.log(data)
-  successMessage('Signed up successfully!')
-  setTimeout(function () { $('#message').text('') }, 1000)
+  successMessage('Signed up successfully! Please sign in!')
+  // setTimeout(function () { $('#message').text('') }, 1000)
 }
 
 const onSignUpFailure = function () {
   failureMessage('Sign up failed.')
-  setTimeout(function () { $('#message').text('') }, 2000)
+  // setTimeout(function () { $('#message').text('') }, 10000)
 }
 
 // responseData is the data the API sends back when we make a request
@@ -33,7 +33,8 @@ const onSignUpFailure = function () {
 const onSignInSuccess = function (responseData) {
   console.log(responseData)
   successMessage('Welcome back!')
-  setTimeout(function () { $('#message').text('') }, 4000)
+  // $('#message').fadeOut(4050)
+  // setTimeout(function () { $('#message').text('') }, 2000)
   $('.after-sign-in').show()
   $('.before-sign-in').hide()
 
@@ -45,7 +46,27 @@ const onSignInSuccess = function (responseData) {
   // can hide signIn button after signing in by putting   $('#sign-in').hide here
 }
 
-// store.game = responseData.game
+const onEnterSelectionsSuccess = function (responseData) {
+  console.log('helloooooooooooooo')
+  // $('#message').fadeIn(1000)
+  successMessage('Apartment specs saved!')
+  // setTimeout(function () { $('#message').text('') }, 4000)
+  $('.after-sign-in').show()
+  // $('.before-sign-in').hide()
+  // $('#message').fadeOut(2850)
+  // $('.after-sign-in').show()
+  // $('.before-sign-in').hide()
+  // add .hide somewhere in here using jQuery
+  //  save the 'user' we got from the API inside of 'store' so we
+  //  can use it later from any file
+  store.user = responseData.user
+}
+
+const onViewSelectionsSuccess = function (responseData) {
+  console.log('this is response data:', responseData)
+  successMessage('Here are your saved apartment specs!')
+  // $('#message').fadeOut(20050)
+}
 // click button, call to api, store data...in store
 
 const onSignInFailure = function () {
@@ -54,17 +75,18 @@ const onSignInFailure = function () {
 
 const onChangePasswordSuccess = function () {
   successMessage('Changed password successfully!')
-  setTimeout(function () { $('#message').text('') }, 3000)
+  // $('#message').fadeOut(2050)
+  // setTimeout(function () { $('#message').text('') }, 3000)
 }
 
 const onChangePasswordFailure = function () {
   failureMessage('Password change failed.')
-  setTimeout(function () { $('#message').text('') }, 7000)
+  // setTimeout(function () { $('#message').text('') }, 7000)
 }
 
 const onSignOutSuccess = function () {
   successMessage('Thanks for stopping by! See you next time!')
-  setTimeout(function () { $('#message').text('') }, 4000)
+  // setTimeout(function () { $('#message').text('') }, 4000)
   $('.after-sign-in').hide()
   $('.before-sign-in').show()
   store.user = ''
@@ -72,19 +94,6 @@ const onSignOutSuccess = function () {
 
 const onSignOutFailure = function () {
   failureMessage('Sign out failed.')
-}
-
-const onEnterSelectionsSuccess = function (responseData) {
-  console.log(responseData)
-  successMessage('Apartment specs saved!')
-  setTimeout(function () { $('#message').text('') }, 4000)
-  // $('.after-sign-in').show()
-  // $('.before-sign-in').hide()
-
-  // add .hide somewhere in here using jQuery
-  //  save the 'user' we got from the API inside of 'store' so we
-  //  can use it later from any file
-  store.user = responseData.user
 }
 
 // const onCreateGameSuccess = function (responseData) {
@@ -108,7 +117,8 @@ module.exports = {
   onChangePasswordFailure,
   onSignOutSuccess,
   onSignOutFailure,
-  onEnterSelectionsSuccess
+  onEnterSelectionsSuccess,
+  onViewSelectionsSuccess
 //  onCreateGameSuccess,
 //  onCreateGameFailure
 }

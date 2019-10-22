@@ -47,8 +47,18 @@ const onEnterSelections = function (event) {
   const form = event.target
   const formData = getFormFields(form)
   api.enterSelections(formData)
-    .then(ui.onEnterSelectionSuccess)
-    .catch(ui.onEnterSelectionFailure)
+    .then(ui.onEnterSelectionsSuccess)
+    .catch(ui.onEnterSelectionsFailure)
+}
+
+const onViewSelections = function (event) {
+  console.log('Made it to events!')
+  event.preventDefault()
+  // const form = event.target
+  // const formData = getFormFields(form)
+  api.viewSelections()
+    .then(ui.onViewSelectionsSuccess)
+    .catch(ui.onViewSelectionsFailure)
 }
 
 module.exports = {
@@ -56,6 +66,7 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onEnterSelections
+  onEnterSelections,
+  onViewSelections
   // onClick
 }
