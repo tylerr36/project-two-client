@@ -86,12 +86,12 @@
 
     <form id="enterSelections">
       <h4 class='find-new-apartment'>Create a new apartment preference!</h4>
-      <input type="text" name="apartment[country]" placeholder='Enter country'>
-      <input type="text" name="apartment[city]" placeholder='Enter city'>
-      <input type="number" min="0" name="apartment[price]" placeholder='Max. price'>
-      <input type="number" min="0" name="apartment[ski_distance]" placeholder='Max. ski distance'>
-      <input type="number" min="0" name="apartment[ocean_distance]" placeholder='Max. ocean distance'>
-      <input type="number" min="0" name="apartment[airport_distance]" placeholder='Max. airport distance'>
+      <input type="text" name="apartment[country]" placeholder='Enter country' required>
+      <input type="text" name="apartment[city]" placeholder='Enter city' required>
+      <input type="number" min="0" name="apartment[price]" placeholder='Max. price' required>
+      <input type="number" min="0" name="apartment[ski_distance]" placeholder='Max. ski distance' required>
+      <input type="number" min="0" name="apartment[ocean_distance]" placeholder='Max. ocean distance' required>
+      <input type="number" min="0" name="apartment[airport_distance]" placeholder='Max. airport distance' required>
 
       <button type="submit">Create!</button>
     </form>
@@ -100,13 +100,13 @@
 
     <form id="updateSelections">
       <h4 class='update-apartment'>Update an apartment preference!</h4>
-      <input type="number" name="apartment[id]" placeholder='Enter apartment ID'>
-      <input type="text" name="apartment[country]" placeholder='Enter country'>
-      <input type="text" name="apartment[city]" placeholder='Enter city'>
-      <input type="number" min="0" name="apartment[price]" placeholder='Max. price'>
-      <input type="number" min="0" name="apartment[ski_distance]" placeholder='Max. ski distance'>
-      <input type="number" min="0" name="apartment[ocean_distance]" placeholder='Max. ocean distance'>
-      <input type="number" min="0" name="apartment[airport_distance]" placeholder='Max. airport distance'>
+      <input type="number" name="apartment[id]" placeholder='Enter apartment ID' required>
+      <input type="text" name="apartment[country]" placeholder='Enter country' required>
+      <input type="text" name="apartment[city]" placeholder='Enter city' required>
+      <input type="number" min="0" name="apartment[price]" placeholder='Max. price' required>
+      <input type="number" min="0" name="apartment[ski_distance]" placeholder='Max. ski distance' required>
+      <input type="number" min="0" name="apartment[ocean_distance]" placeholder='Max. ocean distance' required>
+      <input type="number" min="0" name="apartment[airport_distance]" placeholder='Max. airport distance' required>
 
       <button type="submit">Update!</button>
   </form>
@@ -114,7 +114,7 @@
 
     <form id="viewOneSelection">
         <button>View this apartment preference!</button>
-        <input type="number" min="0" name="apartment[id]" placeholder='Enter apartment ID'>
+        <input type="number" min="0" name="apartment[id]" placeholder='Enter apartment ID' required>
     </form>
 
     <div>
@@ -139,7 +139,7 @@
 
   <form id="deleteOneSelection">
       <button>Delete this apartment preference!</button>
-      <input type="number" min="0" name="apartment[id]" placeholder='Enter apartment ID'>
+      <input type="number" min="0" name="apartment[id]" placeholder='Enter apartment ID' required>
   </form>
 
 
