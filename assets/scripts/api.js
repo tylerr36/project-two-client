@@ -65,7 +65,7 @@ const signOut = function () {
 }
 
 const enterSelections = function (formData) {
-  console.log(formData)
+  // console.log(formData)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/apartments',
@@ -88,7 +88,7 @@ const viewSelections = function () {
 }
 
 const viewOneSelection = function (formData) {
-//  console.log('this is api for viewOne ' + formData)
+//  // console.log('this is api for viewOne ' + formData)
   return $.ajax({
     method: 'GET',
     // if error, take out slash at end of next line
@@ -100,7 +100,7 @@ const viewOneSelection = function (formData) {
 }
 
 const deleteOneSelection = function (formData) {
-  // console.log('this is api for viewOne ' + formData)
+  // // console.log('this is api for viewOne ' + formData)
   return $.ajax({
     method: 'DELETE',
     // if error, take out slash at end of next line
@@ -112,7 +112,7 @@ const deleteOneSelection = function (formData) {
 }
 
 const updateSelections = function (formData) {
-  console.log(formData.apartment.id)
+  // console.log(formData.apartment.id)
   return $.ajax({
     method: 'PATCH',
     // if error, take out slash at end of next line

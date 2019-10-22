@@ -18,7 +18,7 @@ const failureMessage = function (newText) {
 }
 
 const onSignUpSuccess = function (data) {
-  // console.log(data)
+  // // console.log(data)
   successMessage('Signed up successfully! Please sign in!')
   // setTimeout(function () { $('#message').text('') }, 1000)
 }
@@ -31,7 +31,7 @@ const onSignUpFailure = function () {
 // responseData is the data the API sends back when we make a request
 // In this case, it has our 'user' and our 'user's token'
 const onSignInSuccess = function (responseData) {
-  console.log(responseData)
+  // console.log(responseData)
   successMessage('Welcome back!')
   // $('#message').fadeOut(4050)
   // setTimeout(function () { $('#message').text('') }, 2000)
@@ -42,7 +42,7 @@ const onSignInSuccess = function (responseData) {
   //  save the 'user' we got from the API inside of 'store' so we
   //  can use it later from any file
   store.user = responseData.user
-  console.log(store.user.id)
+  // console.log(store.user.id)
   // can hide signIn button after signing in by putting   $('#sign-in').hide here
 }
 
@@ -51,7 +51,7 @@ const onSignInFailure = function () {
 }
 
 const onEnterSelectionsSuccess = function (responseData) {
-  console.log('helloooooooooooooo')
+  // // console.log('helloooooooooooooo')
   // $('#message').fadeIn(1000)
   successMessage('Apartment specs saved!')
   // setTimeout(function () { $('#message').text('') }, 4000)
@@ -67,7 +67,7 @@ const onEnterSelectionsSuccess = function (responseData) {
 }
 
 const onEnterSelectionsFailure = function (responseData) {
-  // console.log('helloooooooooooooo')
+  // // console.log('helloooooooooooooo')
   // $('#message').fadeIn(1000)
   failureMessage('Failure saving apartment specs!')
 }
@@ -77,7 +77,7 @@ const onEnterSelectionsFailure = function (responseData) {
 // }
 
 // const onViewSelectionsSuccess = function (responseData) {
-//   console.log('this is response data:', responseData)
+//   // console.log('this is response data:', responseData)
 //   successMessage('Here are your saved apartment specs!')
 //   // $('#message').fadeOut(20050)
 // }
@@ -108,7 +108,7 @@ const onViewOneSelectionSuccess = function (data) {
   $('#apartment-message2').html('')
   $('#apartment-message').html('')
   // data.apartment.id apartment
-  // console.log('this is from ui ' + data.apartment.id)
+  // // console.log('this is from ui ' + data.apartment.id)
   const apartmentHTML = (`
  <p>ID: ${data.apartment.id}</p>
  <p>Country: ${data.apartment.country}</p>
@@ -133,7 +133,7 @@ const onViewOneSelectionFailure = function (data) {
 // $('#apartment-message2').html('')
 // $('#apartment-message').html('')
 // data.apartment.id apartment
-// console.log('this is from ui ' + data.apartment.id)
+// // console.log('this is from ui ' + data.apartment.id)
 //   const apartmentHTML = (`
 //  <p>ID: ${data.apartment.id}</p>
 //  <p>Country: ${data.apartment.country}</p>
@@ -155,7 +155,7 @@ const onDeleteOneSelectionSuccess = function (data) {
   $('#apartment-message').html('')
   $('#apartment-delete').html('')
   // data.apartment.id apartment
-//  console.log('this is from ui ' + data.apartment.id)
+//  // console.log('this is from ui ' + data.apartment.id)
 //   const apartmentHTML = (`
 //  <p>ID: ${data.apartment.id}</p>
 //  <p>Country: ${data.apartment.country}</p>
@@ -179,7 +179,7 @@ const onDeleteOneSelectionFailure = function (data) {
 }
 
 const onUpdateSelectionsSuccess = function (responseData) {
-  console.log('helloooooooooooooo')
+  // console.log('helloooooooooooooo')
   // $('#message').fadeIn(1000)
   successMessage('Apartment specs updated! Click "View all saved preferences" to see your updated list!')
   $('#apartment-message').hide()
@@ -189,7 +189,7 @@ const onUpdateSelectionsSuccess = function (responseData) {
 }
 
 const onUpdateSelectionsFailure = function (responseData) {
-  console.log('helloooooooooooooo')
+  // console.log('helloooooooooooooo')
   // $('#message').fadeIn(1000)
   failureMessage('Apartment update failed!')
   // setTimeout(function () { $('#message').text('') }, 4000)

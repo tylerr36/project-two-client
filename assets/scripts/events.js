@@ -52,7 +52,7 @@ const onEnterSelections = function (event) {
 }
 
 const onViewSelections = function (event) {
-  console.log('Made it to events!')
+  // console.log('Made it to events!')
   event.preventDefault()
   // const form = event.target
   // const formData = getFormFields(form)
@@ -62,7 +62,7 @@ const onViewSelections = function (event) {
 }
 
 const onViewOneSelection = function (event) {
-  // console.log('Made it to events for view one!')
+  // // console.log('Made it to events for view one!')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -72,7 +72,7 @@ const onViewOneSelection = function (event) {
 }
 
 const onDeleteOneSelection = function (event) {
-  console.log('Made it to events for view one!')
+  // console.log('Made it to events for view one!')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
