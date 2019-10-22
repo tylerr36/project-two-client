@@ -18,7 +18,7 @@ const failureMessage = function (newText) {
 }
 
 const onSignUpSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   successMessage('Signed up successfully! Please sign in!')
   // setTimeout(function () { $('#message').text('') }, 1000)
 }
@@ -46,12 +46,16 @@ const onSignInSuccess = function (responseData) {
   // can hide signIn button after signing in by putting   $('#sign-in').hide here
 }
 
+const onSignInFailure = function () {
+  failureMessage('Sign in failed.')
+}
+
 const onEnterSelectionsSuccess = function (responseData) {
   console.log('helloooooooooooooo')
   // $('#message').fadeIn(1000)
   successMessage('Apartment specs saved!')
   // setTimeout(function () { $('#message').text('') }, 4000)
-  $('.after-sign-in').show()
+  // $('.after-sign-in').show()
   // $('.before-sign-in').hide()
   // $('#message').fadeOut(2850)
   // $('.after-sign-in').show()
@@ -60,6 +64,12 @@ const onEnterSelectionsSuccess = function (responseData) {
   //  save the 'user' we got from the API inside of 'store' so we
   //  can use it later from any file
   // store.user = responseData.user
+}
+
+const onEnterSelectionsFailure = function (responseData) {
+  // console.log('helloooooooooooooo')
+  // $('#message').fadeIn(1000)
+  failureMessage('Failure saving apartment specs!')
 }
 
 // const onViewSelectionsSuccess = (data) => {
@@ -74,7 +84,9 @@ const onEnterSelectionsSuccess = function (responseData) {
 // click button, call to api, store data...in store
 
 const onViewSelectionsSuccess = function (data) {
+  successMessage('Here are your saved apartment preferences!')
   $('#apartment-message').html('')
+  $('#apartment-message2').html('')
   data.apartments.forEach(apartment => {
     const apartmentHTML = (`
  <p>ID: ${apartment.id}</p>
@@ -88,10 +100,72 @@ const onViewSelectionsSuccess = function (data) {
  `)
     $('#apartment-message').append(apartmentHTML)
   })
+  $('#apartment-message').show()
 }
 
-const onSignInFailure = function () {
-  failureMessage('Sign in failed.')
+const onViewOneSelectionSuccess = function (data) {
+  successMessage('Here is your apartment preference!')
+  $('#apartment-message2').html('')
+  $('#apartment-message').html('')
+  // data.apartment.id apartment
+  // console.log('this is from ui ' + data.apartment.id)
+  const apartmentHTML = (`
+ <p>ID: ${data.apartment.id}</p>
+ <p>Country: ${data.apartment.country}</p>
+<p>City: ${data.apartment.city}</p>
+<p>Price: ${data.apartment.price}</p>
+<p>Ski Distance: ${data.apartment.ski_distance}</p>
+ <p>Ocean Distance: ${data.apartment.ocean_distance}</p>
+ <p>Airport Distance: ${data.apartment.airport_distance}</p>
+  <br>
+ `)
+  $('#apartment-message2').append(apartmentHTML)
+
+  $('#apartment-message2').show()
+}
+
+const onDeleteOneSelectionSuccess = function (data) {
+  successMessage('Apartment preference deleted!')
+  $('#apartment-message2').html('')
+  $('#apartment-message').html('')
+  $('#apartment-delete').html('')
+  // data.apartment.id apartment
+  console.log('this is from ui ' + data.apartment.id)
+  const apartmentHTML = (`
+ <p>ID: ${data.apartment.id}</p>
+ <p>Country: ${data.apartment.country}</p>
+<p>City: ${data.apartment.city}</p>
+<p>Price: ${data.apartment.price}</p>
+<p>Ski Distance: ${data.apartment.ski_distance}</p>
+ <p>Ocean Distance: ${data.apartment.ocean_distance}</p>
+ <p>Airport Distance: ${data.apartment.airport_distance}</p>
+  <br>
+ `)
+  $('#apartment-delete').append(apartmentHTML)
+
+  $('#apartment-delete').show()
+}
+
+const onUpdateSelectionsSuccess = function (responseData) {
+  console.log('helloooooooooooooo')
+  // $('#message').fadeIn(1000)
+  successMessage('Apartment specs updated! Click "View all saved preferences" to see your updated list!')
+  $('#apartment-message').hide()
+  $('#apartment-message2').hide()
+  // setTimeout(function () { $('#message').text('') }, 4000)
+  // $('.after-sign-in').show()
+}
+
+const onUpdateSelectionsFailure = function (responseData) {
+  console.log('helloooooooooooooo')
+  // $('#message').fadeIn(1000)
+  failureMessage('Apartment update failed!')
+  // setTimeout(function () { $('#message').text('') }, 4000)
+  // $('.after-sign-in').show()
+}
+
+const onViewSelectionsFailure = function () {
+  failureMessage('Apartment viewing failed!')
 }
 
 const onChangePasswordSuccess = function () {
@@ -139,7 +213,13 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onEnterSelectionsSuccess,
-  onViewSelectionsSuccess
-//  onCreateGameSuccess,
-//  onCreateGameFailure
+  onEnterSelectionsFailure,
+  onViewSelectionsSuccess,
+  onViewSelectionsFailure,
+  onUpdateSelectionsSuccess,
+  onUpdateSelectionsFailure,
+  onViewOneSelectionSuccess,
+  onDeleteOneSelectionSuccess
+  //  onCreateGameSuccess,
+  //  onCreateGameFailure
 }

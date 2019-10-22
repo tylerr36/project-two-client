@@ -15,6 +15,9 @@ $(() => {
   $('.border').on('click', events.onClick)
   $('#enterSelections').on('submit', events.onEnterSelections)
   $('#viewSelections').on('click', events.onViewSelections)
+  $('#updateSelections').on('submit', events.onUpdateSelections)
+  $('#viewOneSelection').on('submit', events.onViewOneSelection)
+  $('#deleteOneSelection').on('submit', events.onDeleteOneSelection)
   // $('.start-game').on('click', events.onCreateGame)
 
   // when start game button is clicked, run a function to gameEvents.playGame

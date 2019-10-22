@@ -61,12 +61,44 @@ const onViewSelections = function (event) {
     .catch(ui.onViewSelectionsFailure)
 }
 
+const onViewOneSelection = function (event) {
+  // console.log('Made it to events for view one!')
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.viewOneSelection(formData)
+    .then(ui.onViewOneSelectionSuccess)
+    .catch(ui.onViewOneSelectionFailure)
+}
+
+const onDeleteOneSelection = function (event) {
+  console.log('Made it to events for view one!')
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.deleteOneSelection(formData)
+    .then(ui.onDeleteOneSelectionSuccess)
+    .catch(ui.onDeleteOneSelectionFailure)
+}
+
+const onUpdateSelections = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.updateSelections(formData)
+    .then(ui.onUpdateSelectionsSuccess)
+    .catch(ui.onUpdateSelectionsFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
   onEnterSelections,
-  onViewSelections
+  onViewSelections,
+  onUpdateSelections,
+  onViewOneSelection,
+  onDeleteOneSelection
   // onClick
 }

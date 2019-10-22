@@ -3,7 +3,7 @@ const store = require('./store')
 
 // AJAX call to signUp endpoint on server
 
-const signUp = function(formData) {
+const signUp = function (formData) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-up',
@@ -59,6 +59,7 @@ const signOut = function () {
       $('#sign-up').show()
       $('.signup').show()
       $('#getstats').hide()
+      $('#apartment-message').hide()
     }
   })
 }
@@ -86,11 +87,51 @@ const viewSelections = function () {
   })
 }
 
+const viewOneSelection = function (formData) {
+//  console.log('this is api for viewOne ' + formData)
+  return $.ajax({
+    method: 'GET',
+    // if error, take out slash at end of next line
+    url: config.apiUrl + '/apartments/' + formData.apartment.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteOneSelection = function (formData) {
+  // console.log('this is api for viewOne ' + formData)
+  return $.ajax({
+    method: 'DELETE',
+    // if error, take out slash at end of next line
+    url: config.apiUrl + '/apartments/' + formData.apartment.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateSelections = function (formData) {
+  console.log(formData.apartment.id)
+  return $.ajax({
+    method: 'PATCH',
+    // if error, take out slash at end of next line
+    url: config.apiUrl + '/apartments/' + formData.apartment.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   enterSelections,
-  viewSelections
+  viewSelections,
+  updateSelections,
+  viewOneSelection,
+  deleteOneSelection
 }
