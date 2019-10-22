@@ -124,6 +124,31 @@ const onViewOneSelectionSuccess = function (data) {
   $('#apartment-message2').show()
 }
 
+const onViewOneSelectionFailure = function (data) {
+  failureMessage('Apartment preference retrieval failed! Make sure you are entering a valid ID!')
+}
+
+// const onViewOneSelectionFailure = function (data) {
+//  failureMessage('Apartment preference retrieval failed! Make sure you are entering a valid ID!')
+// $('#apartment-message2').html('')
+// $('#apartment-message').html('')
+// data.apartment.id apartment
+// console.log('this is from ui ' + data.apartment.id)
+//   const apartmentHTML = (`
+//  <p>ID: ${data.apartment.id}</p>
+//  <p>Country: ${data.apartment.country}</p>
+// <p>City: ${data.apartment.city}</p>
+// <p>Price: ${data.apartment.price}</p>
+// <p>Ski Distance: ${data.apartment.ski_distance}</p>
+//  <p>Ocean Distance: ${data.apartment.ocean_distance}</p>
+//  <p>Airport Distance: ${data.apartment.airport_distance}</p>
+//   <br>
+//  `)
+//   $('#apartment-message2').append(apartmentHTML)
+//
+//   $('#apartment-message2').show()
+// }
+
 const onDeleteOneSelectionSuccess = function (data) {
   successMessage('Apartment preference deleted!')
   $('#apartment-message2').html('')
@@ -144,6 +169,13 @@ const onDeleteOneSelectionSuccess = function (data) {
 //  $('#apartment-delete').append(apartmentHTML)
 
 //  $('#apartment-delete').show()
+}
+
+const onDeleteOneSelectionFailure = function (data) {
+  failureMessage('Please enter a valid ID to delete!')
+  // $('#apartment-message2').html('')
+  // $('#apartment-message').html('')
+  // $('#apartment-delete').html('')
 }
 
 const onUpdateSelectionsSuccess = function (responseData) {
@@ -219,7 +251,11 @@ module.exports = {
   onUpdateSelectionsSuccess,
   onUpdateSelectionsFailure,
   onViewOneSelectionSuccess,
-  onDeleteOneSelectionSuccess
+  onViewOneSelectionFailure,
+  onDeleteOneSelectionSuccess,
+  onDeleteOneSelectionFailure
+  // onDeleteOneSelectionFailure
+
   //  onCreateGameSuccess,
   //  onCreateGameFailure
 }
