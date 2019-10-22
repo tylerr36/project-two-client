@@ -62,12 +62,33 @@ const onEnterSelectionsSuccess = function (responseData) {
   // store.user = responseData.user
 }
 
-const onViewSelectionsSuccess = function (responseData) {
-  console.log('this is response data:', responseData)
-  successMessage('Here are your saved apartment specs!')
-  // $('#message').fadeOut(20050)
-}
+// const onViewSelectionsSuccess = (data) => {
+//   $('.content').html(data.apartments)
+// }
+
+// const onViewSelectionsSuccess = function (responseData) {
+//   console.log('this is response data:', responseData)
+//   successMessage('Here are your saved apartment specs!')
+//   // $('#message').fadeOut(20050)
+// }
 // click button, call to api, store data...in store
+
+const onViewSelectionsSuccess = function (data) {
+  $('#apartment-message').html('')
+  data.apartments.forEach(apartment => {
+    const apartmentHTML = (`
+ <p>ID: ${apartment.id}</p>
+ <p>Country: ${apartment.country}</p>
+<p>City: ${apartment.city}</p>
+<p>Price: ${apartment.price}</p>
+<p>Ski Distance: ${apartment.ski_distance}</p>
+ <p>Ocean Distance: ${apartment.ocean_distance}</p>
+ <p>Airport Distance: ${apartment.airport_distance}</p>
+  <br>
+ `)
+    $('#apartment-message').append(apartmentHTML)
+  })
+}
 
 const onSignInFailure = function () {
   failureMessage('Sign in failed.')
