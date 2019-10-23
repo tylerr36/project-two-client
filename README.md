@@ -5,8 +5,8 @@ This app allows users to save their selected preferences for apartments they'd l
 ## Important Links
 
 - [Deployed front end client](https://tylerr36.github.io/project-two-client/)
-- [Front end client repository] (https://github.com/tylerr36/project-two-client)
-- [Deployed back end API] (https://blooming-cove-62734.herokuapp.com/)
+- [Front end client repository](https://github.com/tylerr36/project-two-client)
+- [Deployed back end API](https://blooming-cove-62734.herokuapp.com/)
 - [GitHub Repo for project's back end](https://github.com/tylerr36/Project_2_api)
 
  The additional repo above is the project's back end, which pro
