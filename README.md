@@ -9,8 +9,6 @@ This app allows users to save their selected preferences for apartments they'd l
 - [Deployed back end API](https://blooming-cove-62734.herokuapp.com/)
 - [GitHub Repo for project's back end](https://github.com/tylerr36/Project_2_api)
 
- The additional repo above is the project's back end, which pro
-
 # Technologies Used
 
 - HTML
