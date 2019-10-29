@@ -60,6 +60,7 @@ const signOut = function () {
       $('.signup').show()
       $('#getstats').hide()
       $('#apartment-message').hide()
+      $('#car-message').hide()
     }
   })
 }
@@ -124,6 +125,66 @@ const updateSelections = function (formData) {
   })
 }
 
+const enterCarSelections = function (formData) {
+  // console.log(formData)
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/cars',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
+const viewCarSelections = function () {
+  return $.ajax({
+    method: 'GET',
+    // if error, take out slash at end of next line
+    url: config.apiUrl + '/cars',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const viewOneCarSelection = function (formData) {
+//  // console.log('this is api for viewOne ' + formData)
+  return $.ajax({
+    method: 'GET',
+    // if error, take out slash at end of next line
+    url: config.apiUrl + '/cars/' + formData.car.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteOneCarSelection = function (formData) {
+  // // console.log('this is api for viewOne ' + formData)
+  return $.ajax({
+    method: 'DELETE',
+    // if error, take out slash at end of next line
+    url: config.apiUrl + '/cars/' + formData.car.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateCarSelections = function (formData) {
+  // console.log(formData.apartment.id)
+  return $.ajax({
+    method: 'PATCH',
+    // if error, take out slash at end of next line
+    url: config.apiUrl + '/cars/' + formData.car.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -133,5 +194,10 @@ module.exports = {
   viewSelections,
   updateSelections,
   viewOneSelection,
-  deleteOneSelection
+  deleteOneSelection,
+  enterCarSelections,
+  viewCarSelections,
+  updateCarSelections,
+  viewOneCarSelection,
+  deleteOneCarSelection
 }

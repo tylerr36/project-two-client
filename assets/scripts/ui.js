@@ -223,17 +223,78 @@ const onSignOutFailure = function () {
   failureMessage('Sign out failed.')
 }
 
-// const onCreateGameSuccess = function (responseData) {
-//   successMessage('Created new game!')
-//   store.game = responseData.game
-//   $('.border').text('')
-//   $('#main').removeClass('hide')
-// }
+const onEnterCarSelectionsSuccess = function (responseData) {
+  successMessage('Car specs saved!')
+}
 
-// const onCreateGameFailure = function () {
-//   failureMessage('Game creation failed!')
-//   $('.game').text('')
-// }
+const onEnterCarSelectionsFailure = function (responseData) {
+  failureMessage('Failure saving car specs!')
+}
+
+const onViewCarSelectionsSuccess = function (data) {
+  successMessage('Here are your saved car preferences!')
+  $('#car-message').html('')
+  $('#car-message2').html('')
+  data.cars.forEach(car => {
+    const carHTML = (`
+ <p>ID: ${car.id}</p>
+ <p>Make: ${car.make}</p>
+<p>Model: ${car.model}</p>
+<p>Year: ${car.year}</p>
+<p>MPG Min: ${car.mpg_min}</p>
+ <p>Price Max: ${car.price_max}</p>
+  <br>
+ `)
+    $('#car-message').append(carHTML)
+  })
+  $('#car-message').show()
+}
+
+const onViewOneCarSelectionSuccess = function (data) {
+  successMessage('Here is your car preference!')
+  $('#car-message2').html('')
+  $('#car-message').html('')
+  const carHTML = (`
+      <p>ID: ${data.car.id}</p>
+      <p>Make: ${data.car.make}</p>
+      <p>Model: ${data.car.model}</p>
+      <p>Year: ${data.car.year}</p>
+      <p>MPG Min: ${data.car.mpg_min}</p>
+      <p>Price Max: ${data.car.price_max}</p>
+     <br>
+    `)
+  $('#car-message').append(carHTML)
+  $('#car-message').show()
+}
+
+const onViewOneCarSelectionFailure = function (data) {
+  failureMessage('Car preference retrieval failed! Make sure you are entering a valid ID!')
+}
+
+const onDeleteOneCarSelectionSuccess = function (data) {
+  successMessage('Car preference deleted!')
+  $('#car-message2').html('')
+  $('#car-message').html('')
+  $('#car-delete').html('')
+}
+
+const onDeleteOneCarSelectionFailure = function (data) {
+  failureMessage('Please enter a valid car ID to delete!')
+}
+
+const onUpdateCarSelectionsSuccess = function (responseData) {
+  successMessage('Car specs updated! Click "View all saved preferences" to see your updated list!')
+  $('#car-message').hide()
+  $('#car-message2').hide()
+}
+
+const onUpdateCarSelectionsFailure = function (responseData) {
+  failureMessage('Car update failed!')
+}
+
+const onViewCarSelectionsFailure = function () {
+  failureMessage('Car viewing failed!')
+}
 
 module.exports = {
   onSignUpSuccess,
@@ -253,9 +314,15 @@ module.exports = {
   onViewOneSelectionSuccess,
   onViewOneSelectionFailure,
   onDeleteOneSelectionSuccess,
-  onDeleteOneSelectionFailure
-  // onDeleteOneSelectionFailure
-
-  //  onCreateGameSuccess,
-  //  onCreateGameFailure
+  onDeleteOneSelectionFailure,
+  onEnterCarSelectionsSuccess,
+  onEnterCarSelectionsFailure,
+  onViewOneCarSelectionSuccess,
+  onViewOneCarSelectionFailure,
+  onDeleteOneCarSelectionSuccess,
+  onDeleteOneCarSelectionFailure,
+  onUpdateCarSelectionsSuccess,
+  onUpdateCarSelectionsFailure,
+  onViewCarSelectionsFailure,
+  onViewCarSelectionsSuccess
 }

@@ -18,6 +18,11 @@ $(() => {
   $('#updateSelections').on('submit', events.onUpdateSelections)
   $('#viewOneSelection').on('submit', events.onViewOneSelection)
   $('#deleteOneSelection').on('submit', events.onDeleteOneSelection)
+  $('#enterCarSelections').on('submit', events.onEnterCarSelections)
+  $('#viewCarSelections').on('click', events.onViewCarSelections)
+  $('#updateCarSelections').on('submit', events.onUpdateCarSelections)
+  $('#viewOneCarSelection').on('submit', events.onViewOneCarSelection)
+  $('#deleteOneCarSelection').on('submit', events.onDeleteOneCarSelection)
   // $('.start-game').on('click', events.onCreateGame)
 
   // when start game button is clicked, run a function to gameEvents.playGame

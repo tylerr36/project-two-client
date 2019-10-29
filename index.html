@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>Apartment Preferences</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -150,7 +150,7 @@ body {
 <br></br>
 
   <form id="viewSelections">
-      <button>View all saved preferences!</button>
+      <button>View all saved apartment preferences!</button>
   </form>
 
 <br></br>
@@ -159,6 +159,64 @@ body {
       <button>Delete this apartment preference!</button>
       <input type="number" min="0" name="apartment[id]" placeholder='Enter apartment ID' required>
   </form>
+
+<!-- FROM HERE UNTIL THE CHANGE PASSWORD LINE, IT SHOULD ONLY PERTAIN TO CARS! -->
+
+<form id="enterCarSelections">
+  <h4 class='find-new-apartment'>Create a new car preference!</h4>
+  <input type="text" name="car[make]" placeholder='Enter car make' required>
+  <input type="text" name="car[model]" placeholder='Enter car model' required>
+  <input type="number" min="1800" name="car[year]" placeholder='Year' required>
+  <input type="number" min="1" name="car[mpg_min]" placeholder='Minimum MPG' required>
+  <input type="number" min="0" name="car[price_max]" placeholder='Max. price' required>
+
+  <button type="submit">Create!</button>
+</form>
+
+<br></br>
+
+<form id="updateCarSelections">
+  <h4 class='update-apartment'>Update a car preference!</h4>
+  <input type="number" name="car[id]" placeholder='Enter car ID' required>
+  <input type="text" name="car[make]" placeholder='Enter car make' required>
+  <input type="text" name="car[model]" placeholder='Enter car model' required>
+  <input type="number" min="1800" name="car[year]" placeholder='Year' required>
+  <input type="number" min="1" name="car[mpg_min]" placeholder='Minimum MPG' required>
+  <input type="number" min="0" name="car[price_max]" placeholder='Max. price' required>
+
+  <button type="submit">Update!</button>
+</form>
+<br></br>
+
+<form id="viewOneCarSelection">
+    <button>View this car preference!</button>
+    <input type="number" min="0" name="car[id]" placeholder='Enter car ID' required>
+</form>
+
+<div>
+  <div id="car-message"></div>
+</div>
+
+<div>
+  <div id="car-message2"></div>
+</div>
+
+<div>
+  <div id="car-delete"></div>
+</div>
+
+<br></br>
+
+<form id="viewCarSelections">
+  <button>View all saved car preferences!</button>
+</form>
+
+<br></br>
+
+<form id="deleteOneCarSelection">
+  <button>Delete this car preference!</button>
+  <input type="number" min="0" name="car[id]" placeholder='Enter car ID' required>
+</form>
 
 
     <br></br>

@@ -90,6 +90,54 @@ const onUpdateSelections = function (event) {
     .catch(ui.onUpdateSelectionsFailure)
 }
 
+const onEnterCarSelections = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.enterCarSelections(formData)
+    .then(ui.onEnterCarSelectionsSuccess)
+    .catch(ui.onEnterCarSelectionsFailure)
+}
+
+const onViewCarSelections = function (event) {
+  // console.log('Made it to events!')
+  event.preventDefault()
+  // const form = event.target
+  // const formData = getFormFields(form)
+  api.viewCarSelections()
+    .then(ui.onViewCarSelectionsSuccess)
+    .catch(ui.onViewCarSelectionsFailure)
+}
+
+const onViewOneCarSelection = function (event) {
+  // // console.log('Made it to events for view one!')
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.viewOneSelection(formData)
+    .then(ui.onViewOneCarSelectionSuccess)
+    .catch(ui.onViewOneCarSelectionFailure)
+}
+
+const onDeleteOneCarSelection = function (event) {
+  // console.log('Made it to events for view one!')
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.deleteOneCarSelection(formData)
+    .then(ui.onDeleteOneCarSelectionSuccess)
+    .catch(ui.onDeleteOneCarSelectionFailure)
+}
+
+const onUpdateCarSelections = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.updateSelections(formData)
+    .then(ui.onUpdateCarSelectionsSuccess)
+    .catch(ui.onUpdateCarSelectionsFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -99,6 +147,11 @@ module.exports = {
   onViewSelections,
   onUpdateSelections,
   onViewOneSelection,
-  onDeleteOneSelection
+  onDeleteOneSelection,
+  onEnterCarSelections,
+  onViewCarSelections,
+  onViewOneCarSelection,
+  onDeleteOneCarSelection,
+  onUpdateCarSelections
   // onClick
 }
