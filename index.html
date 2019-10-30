@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Apartment Preferences</title>
+  <title>Apartment and Car Preferences</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <h1>Check out this killer CSS! You are welcome.</h1>
+  <h1>Find your new apartment and car!.</h1>
   <div id="message"></div>
   <div class="before-sign-in">
     <form id="sign-up">
@@ -51,8 +51,6 @@ body {
       <button type="submit">Sign in</button>
     </form>
   </div>
-
-  <br></br>
 
   <div class="after-sign-in hide">
 
@@ -118,7 +116,7 @@ body {
 
     <form id="updateSelections">
       <h4 class='update-apartment'>Update an apartment preference!</h4>
-      <input type="number" name="apartment[id]" placeholder='Enter apartment ID' required>
+      <input type="number" min="0" name="apartment[id]" placeholder='Enter apartment ID' required>
       <input type="text" name="apartment[country]" placeholder='Enter country' required>
       <input type="text" name="apartment[city]" placeholder='Enter city' required>
       <input type="number" min="0" name="apartment[price]" placeholder='Max. price' required>
@@ -147,18 +145,18 @@ body {
       <div id="apartment-delete"></div>
     </div>
 
-<br></br>
-
   <form id="viewSelections">
       <button>View all saved apartment preferences!</button>
   </form>
-
-<br></br>
 
   <form id="deleteOneSelection">
       <button>Delete this apartment preference!</button>
       <input type="number" min="0" name="apartment[id]" placeholder='Enter apartment ID' required>
   </form>
+
+  <br></br>
+  <br></br>
+  <br></br>
 
 <!-- FROM HERE UNTIL THE CHANGE PASSWORD LINE, IT SHOULD ONLY PERTAIN TO CARS! -->
 
@@ -166,7 +164,7 @@ body {
   <h4 class='find-new-apartment'>Create a new car preference!</h4>
   <input type="text" name="car[make]" placeholder='Enter car make' required>
   <input type="text" name="car[model]" placeholder='Enter car model' required>
-  <input type="number" min="1800" name="car[year]" placeholder='Year' required>
+  <input type="number" min="1885" max="2020" name="car[year]" placeholder='Year' required>
   <input type="number" min="1" name="car[mpg_min]" placeholder='Minimum MPG' required>
   <input type="number" min="0" name="car[price_max]" placeholder='Max. price' required>
 
@@ -177,10 +175,10 @@ body {
 
 <form id="updateCarSelections">
   <h4 class='update-apartment'>Update a car preference!</h4>
-  <input type="number" name="car[id]" placeholder='Enter car ID' required>
+  <input type="number" min="0" name="car[id]" placeholder='Enter car ID' required>
   <input type="text" name="car[make]" placeholder='Enter car make' required>
   <input type="text" name="car[model]" placeholder='Enter car model' required>
-  <input type="number" min="1800" name="car[year]" placeholder='Year' required>
+  <input type="number" min="1885" max="2020" name="car[year]" placeholder='Year' required>
   <input type="number" min="1" name="car[mpg_min]" placeholder='Minimum MPG' required>
   <input type="number" min="0" name="car[price_max]" placeholder='Max. price' required>
 
@@ -205,13 +203,9 @@ body {
   <div id="car-delete"></div>
 </div>
 
-<br></br>
-
 <form id="viewCarSelections">
   <button>View all saved car preferences!</button>
 </form>
-
-<br></br>
 
 <form id="deleteOneCarSelection">
   <button>Delete this car preference!</button>

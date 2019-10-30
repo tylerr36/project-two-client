@@ -181,7 +181,7 @@ const onDeleteOneSelectionFailure = function (data) {
 const onUpdateSelectionsSuccess = function (responseData) {
   // console.log('helloooooooooooooo')
   // $('#message').fadeIn(1000)
-  successMessage('Apartment specs updated! Click "View all saved preferences" to see your updated list!')
+  successMessage('Apartment specs updated! Click "View all saved apartment preferences" to see your updated list!')
   $('#apartment-message').hide()
   $('#apartment-message2').hide()
   // setTimeout(function () { $('#message').text('') }, 4000)
@@ -283,7 +283,7 @@ const onDeleteOneCarSelectionFailure = function (data) {
 }
 
 const onUpdateCarSelectionsSuccess = function (responseData) {
-  successMessage('Car specs updated! Click "View all saved preferences" to see your updated list!')
+  successMessage('Car specs updated! Click "View all saved car preferences" to see your updated list!')
   $('#car-message').hide()
   $('#car-message2').hide()
 }
