@@ -114,7 +114,7 @@ const onViewOneCarSelection = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  api.viewOneSelection(formData)
+  api.viewOneCarSelection(formData)
     .then(ui.onViewOneCarSelectionSuccess)
     .catch(ui.onViewOneCarSelectionFailure)
 }
@@ -133,7 +133,7 @@ const onUpdateCarSelections = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  api.updateSelections(formData)
+  api.updateCarSelections(formData)
     .then(ui.onUpdateCarSelectionsSuccess)
     .catch(ui.onUpdateCarSelectionsFailure)
 }
